@@ -162,10 +162,19 @@ def problem1b(point, win, width, height, color):
       :type color:  str
     """
     # --------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # DONE: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
 
+    point.attach_to(win)
+
+    corner1 = rg.Point(point.x - (width / 2), point.y)
+    corner2 = rg.Point(point.x + (width / 2), point.y + height)
+    ellipse = rg.Ellipse(corner1, corner2)
+    ellipse.fill_color = color
+    ellipse.attach_to(win)
+
+    win.render()
 
 # ------------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
